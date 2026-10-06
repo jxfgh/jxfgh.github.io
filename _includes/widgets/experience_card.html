@@ -4,7 +4,7 @@
             <div class="card-body p-4">
                 <div class="row" data-masonry='{"percentPosition": true }'>
                     {% if site.data.profile.education %}
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="mx-2 my-1">
                             <h6>Education &amp; Qualifications</h6>
                             <ul class="list-unstyled mb-1">
@@ -27,30 +27,41 @@
                     {% endif %}
 
                     {% if site.data.profile.experience %}
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <div class="mx-2 my-1">
-                            <h6>Experience</h6>
-                            <ul class="list-unstyled mb-1">
+                            <h6>Professional Experience</h6>
+                            <div class="experience-list">
                                 {% for item in site.data.profile.experience %}
-                                <li class="media mb-1">
-                                    {% if item.logo %}<img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">{% endif %}
-                                    <div class="media-body">
-                                        <div>{{ item.name }}</div>
-                                        <div class="small">{{ item.dept }}</div>
-                                        <div class="small d-flex">
-                                            <div>{{ item.position }}</div>
-                                            <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
+                                <section class="experience-org">
+                                    <div class="experience-org-heading">
+                                        <div>
+                                            <div class="experience-org-name">{{ item.name }}</div>
+                                            {% if item.location %}<div class="small text-muted">{{ item.location }}</div>{% endif %}
                                         </div>
+                                        {% if item.date %}<div class="experience-date"><em>{{ item.date }}</em></div>{% endif %}
                                     </div>
-                                </li>
+                                    {% if item.description %}<p class="small text-muted experience-org-description">{{ item.description }}</p>{% endif %}
+                                    {% for role in item.roles %}
+                                    <div class="experience-role">
+                                        <div class="experience-role-heading">
+                                            <div>
+                                                <span class="experience-role-name">{{ role.position }}</span>
+                                                {% if role.department %}<span class="experience-role-department"> · {{ role.department }}</span>{% endif %}
+                                            </div>
+                                            {% if role.date %}<div class="experience-date"><em>{{ role.date }}</em></div>{% endif %}
+                                        </div>
+                                        {% if role.summary %}<p class="small experience-role-summary">{{ role.summary }}</p>{% endif %}
+                                    </div>
+                                    {% endfor %}
+                                </section>
                                 {% endfor %}
-                            </ul>
+                            </div>
                         </div>
                     </div>
                     {% endif %}
 
                     {% if site.data.profile.awards %}
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="mx-2 my-1">
                             <h6>Honors & Awards</h6>
                             <ul class="list small pl-3 mb-1">
