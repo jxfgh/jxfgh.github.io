@@ -1,5 +1,3 @@
-portrait_url: "/assets/images/photos/lily.jpg"
-portrait_caption: "Xiaofang (Lily) Jiang"
 primary_name: "Xiaofang (Lily) Jiang"
 secondary_name: "PhD, CFA"
 navbar_name: "Xiaofang (Lily) Jiang"
@@ -12,6 +10,8 @@ positions:
 
 email: "lily.jxf@gmail.com"
 linkedin: lily-xiaofang-jiang
+portrait_url: "/assets/images/photos/lily.jpg"
+portrait_caption: "Xiaofang (Lily) Jiang"
 
 short_bio_text_justify: false
 short_bio: >-
