@@ -92,6 +92,72 @@ div.lazy {
     font-family: Source Code Pro, monospace;
 }
 
+.experience-org {
+    padding: 0.15rem 0 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.experience-org:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.experience-org-heading,
+.experience-role-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+}
+
+.experience-org-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.experience-date {
+    flex: 0 0 auto;
+    color: #6c757d;
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.experience-org-description {
+    margin: 0.2rem 0 0.4rem;
+}
+
+.experience-role {
+    margin: 0.65rem 0 0 0.25rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #dee2e6;
+}
+
+.experience-role-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.experience-role-department {
+    color: #6c757d;
+    font-size: 0.88rem;
+}
+
+.experience-role-summary {
+    margin: 0.25rem 0 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 575.98px) {
+    .experience-org-heading,
+    .experience-role-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+}
+
 .carousel button {
     -webkit-appearance: none;
     appearance: none;
