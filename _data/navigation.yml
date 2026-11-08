@@ -1,6 +1,8 @@
 pages:
   - name: Home
     url: /
+  - name: Posts
+    url: /posts
   - name: Research
     url: /#research
   - name: Teaching
@@ -9,7 +11,5 @@ pages:
     url: /#experience
   - name: Publications
     url: /publications
-  - name: Posts
-    url: /posts
   - name: Contact
     url: /#contact
