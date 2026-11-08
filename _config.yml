@@ -21,6 +21,12 @@ baseurl: ""
 # Posts: each Markdown file in _posts/ becomes a page at /posts/<year>/<title>/
 permalink: /posts/:year/:title/
 timezone: Pacific/Auckland
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      navbar_title: Posts   # highlights the Posts tab on article pages
 
 # Build settings
 markdown: kramdown
