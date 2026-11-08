@@ -15,8 +15,12 @@
 # in the templates via {{ site.myvariable }}.
 title: "Xiaofang (Lily) Jiang"
 description: "Academic profile in financial technology, analytics, and AI for financial integrity."
-url: ""
+url: "https://jxfgh.github.io"   # used for absolute links in LinkedIn previews
 baseurl: ""
+
+# Posts: each Markdown file in _posts/ becomes a page at /posts/<year>/<title>/
+permalink: /posts/:year/:title/
+timezone: Pacific/Auckland
 
 # Build settings
 markdown: kramdown
