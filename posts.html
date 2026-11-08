@@ -1,0 +1,23 @@
+---
+layout: default
+title: Posts
+navbar_title: Posts
+permalink: /posts/
+description: "Articles and notes on financial technology, analytics, and AI for financial integrity."
+---
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+        <h2 class="pt-4">Posts</h2>
+        <p class="text-muted">Articles and notes on financial technology, analytics, and AI for financial integrity.</p>
+        <div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+            {% if site.posts.size > 0 %}
+                {% for post in site.posts %}
+                    {% include widgets/blog_card.html item=post hide_bottom_border=forloop.last %}
+                {% endfor %}
+            {% else %}
+                <p class="p-3 mb-0 text-muted">No posts yet. Check back soon.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
