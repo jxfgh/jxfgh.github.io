@@ -1,0 +1,52 @@
+---
+layout: default
+navbar_title: Posts
+container_class: container-fluid
+---
+
+{% capture share_url %}{{ page.url | absolute_url }}{% endcapture %}
+
+<div class="blog-layout-wrapper">
+    <div class="blog-main">
+        <article class="my-3 p-4 bg-white shadow-sm rounded-xl">
+            <p class="mb-2 small"><a href="{{ '/posts' | relative_url }}"><i class="fas fa-angle-left"></i> All posts</a></p>
+            <h1 class="mb-2">{{ page.title }}</h1>
+            {% if page.subtitle %}<p class="lead text-muted mb-2">{{ page.subtitle }}</p>{% endif %}
+            <div class="text-muted small mb-4">
+                <i class="fas fa-calendar-alt"></i> {{ page.date | date: "%B %-d, %Y" }}
+                {% if page.tags.size > 0 %}
+                <span class="ml-3"><i class="fas fa-tags"></i>
+                    {% for tag in page.tags %}<span class="badge badge-light">{{ tag }}</span> {% endfor %}
+                </span>
+                {% endif %}
+            </div>
+
+            <div class="blog-content">
+                {{ content }}
+            </div>
+
+            <hr class="my-4">
+            <div class="d-flex flex-wrap align-items-center">
+                <span class="text-muted small mr-3">Share this post:</span>
+                <a class="btn btn-sm btn-outline-primary mr-2 mb-1" target="_blank" rel="noopener"
+                   href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | url_encode }}">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                {% if page.linkedin_url %}
+                <a class="btn btn-sm btn-outline-secondary mr-2 mb-1" target="_blank" rel="noopener" href="{{ page.linkedin_url }}">
+                    <i class="far fa-comments"></i> Discuss on LinkedIn
+                </a>
+                {% endif %}
+            </div>
+        </article>
+    </div>
+
+    <aside class="blog-toc-sidebar" id="blog-toc">
+        <nav class="blog-toc-nav">
+            <div class="blog-toc-title">On this page</div>
+            <ul class="blog-toc-list"></ul>
+        </nav>
+    </aside>
+</div>
+
+<script src="{{ '/assets/js/blog.js' | relative_url }}"></script>
