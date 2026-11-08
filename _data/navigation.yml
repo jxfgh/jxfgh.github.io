@@ -9,5 +9,7 @@ pages:
     url: /#experience
   - name: Publications
     url: /publications
+  - name: Posts
+    url: /posts
   - name: Contact
     url: /#contact
